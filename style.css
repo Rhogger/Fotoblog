@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 6.25%;
+  font-family: Mulish;
+
+  --nav-item: #8D8D99;
+  --nav-item-selected: #202024;
+  --search-bar-placeholder: #3D3D3D;
+  --title: #202024;
+  --tag: : #202024;
+  --footer: #323238;
+
+  --header-background: #FFFFFF;
+  --main-background: #F5F5F5;
+  --footer-background: #FFFFFF;
+  --card-background: #FFFFFF;
+  --tag-background: #F5F5F5;
+  --search-bar-background: #EEEEEE;
+}
+
+body {
+  height: 100vh;
+}
+
+header {
+  padding: 16rem 112rem;
+
+  background-color: var(--header-background);
+}
+
+header,
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 74rem;
+}
+
+header nav a {
+  font-size: 18rem;
+  font-weight: 900;
+  color: var(--nav-item);
+  text-decoration: none;
+  line-height: 32rem;
+}
+
+header nav a:hover,
+header nav a:focus {
+  color: var(--nav-item-selected);
+  outline: none;
+}
+
+header input {
+  padding: 16rem;
+  border: none;
+  border-radius: 5rem;
+
+  font-size: 16rem;
+  font-weight: 700;
+
+  background-color: var(--search-bar-background);
+
+  max-width: 718rem;
+  width: 100%;
+}
+
+header #user-icon {
+  width: 42rem;
+  height: 42rem;
+
+  border-radius: 999rem;
+
+  object-fit: cover;
+}
+
+main {
+  background-color: var(--main-background);
+
+  padding: 36rem 112rem;
+}
+
+main h1 {
+  font-size: 24rem;
+  font-weight: 700;
+  color: var(--title);
+
+  margin-bottom: 36rem;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 22rem;
+  column-gap: 20rem;
+
+  max-width: fit-content;
+}
+
+#gallery .card {
+  border-radius: 8rem;
+
+  max-width: 390rem;
+  overflow: hidden;
+
+  background-color: var(--card-background);
+}
+
+#gallery .card img {
+  width: 100%;
+}
+
+#gallery .card .description {
+  display: block;
+
+  margin: 22rem;
+}
+
+#gallery .card .description h2 {
+  font-size: 18rem;
+  font-weight: 700;
+  color: var(--title);
+}
+
+#gallery .card .description p {
+  display: inline-block;
+
+  margin-top: 12rem;
+  padding: 7.5rem;
+  border-radius: 6rem;
+
+  background-color: var(--tag-background);
+
+  font-size: 12rem;
+  color: var(--tag);
+}
+
+footer {
+  background-color: var(--footer-background);
+}
+
+footer p {
+  font-size: 16rem;
+  font-weight: 600;
+  color: var(--footer);
+  text-align: center;
+
+  padding: 28rem 16rem;
+}
