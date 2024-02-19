@@ -9,7 +9,7 @@
 
 :root {
   font-size: 6.25%;
-  font-family: Mulish;
+  font-family: Mulish, sans-serif;
 
   --nav-item: #8D8D99;
   --nav-item-selected: #202024;
@@ -27,12 +27,25 @@
 }
 
 body {
+  background-color: var(--header-background);
+}
+
+#app {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+
   height: 100vh;
+
+}
+
+.container {
+  padding: 16rem 32rem;
+  margin-inline: auto;
+
+  width: min(1120rem, 100%);
 }
 
 header {
-  padding: 16rem 112rem;
-
   background-color: var(--header-background);
 }
 
@@ -57,7 +70,21 @@ header nav a:focus {
   outline: none;
 }
 
-header input {
+header form {
+  flex: 1;
+}
+
+header form .input-wrapper label {
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+  position: absolute;
+}
+
+header form .input-wrapper input {
+  font-family: Mulish, sans-serif;
+
   padding: 16rem;
   border: none;
   border-radius: 5rem;
@@ -67,15 +94,19 @@ header input {
 
   background-color: var(--search-bar-background);
 
-  max-width: 718rem;
   width: 100%;
+}
+
+header form .input-wrapper input::placeholder {
+  opacity: 0.56;
+  color: var(--search-bar-placeholder);
 }
 
 header #user-icon {
   width: 42rem;
   height: 42rem;
 
-  border-radius: 999rem;
+  border-radius: 50%;
 
   object-fit: cover;
 }
@@ -83,7 +114,7 @@ header #user-icon {
 main {
   background-color: var(--main-background);
 
-  padding: 36rem 112rem;
+  overflow-y: scroll;
 }
 
 main h1 {
@@ -91,6 +122,7 @@ main h1 {
   font-weight: 700;
   color: var(--title);
 
+  margin-top: 18rem;
   margin-bottom: 36rem;
 }
 
@@ -103,7 +135,7 @@ main h1 {
   max-width: fit-content;
 }
 
-#gallery .card {
+#gallery figure {
   border-radius: 8rem;
 
   max-width: 390rem;
@@ -112,23 +144,39 @@ main h1 {
   background-color: var(--card-background);
 }
 
-#gallery .card img {
+#gallery figure img {
   width: 100%;
+  aspect-ratio: 16/9;
+
+  object-fit: cover;
+
+  /* transition-property: all;
+  transition-duration: .3s;
+  transition-delay: .1s;
+  transition-timing-function: ease-out; */
+
+  transition: filter .2s ease-in, transform .3s ease-out;
 }
 
-#gallery .card .description {
+#gallery figure img:hover {
+  filter: hue-rotate(10deg) contrast(105%) saturate(200%);
+
+  transform: scale(1.1) rotate(-2deg);
+}
+
+#gallery figure figcaption {
   display: block;
 
   margin: 22rem;
 }
 
-#gallery .card .description h2 {
+#gallery figure figcaption h2 {
   font-size: 18rem;
   font-weight: 700;
   color: var(--title);
 }
 
-#gallery .card .description p {
+#gallery figure figcaption span {
   display: inline-block;
 
   margin-top: 12rem;
@@ -139,6 +187,7 @@ main h1 {
 
   font-size: 12rem;
   color: var(--tag);
+  text-transform: uppercase;
 }
 
 footer {
@@ -150,6 +199,28 @@ footer p {
   font-weight: 600;
   color: var(--footer);
   text-align: center;
+}
 
-  padding: 28rem 16rem;
+
+/* Estilização do Scroll */
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #fff transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 4px solid #20202493;
 }
