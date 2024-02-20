@@ -11,19 +11,22 @@
   font-size: 6.25%;
   font-family: Mulish, sans-serif;
 
-  --nav-item: #8D8D99;
-  --nav-item-selected: #202024;
-  --search-bar-placeholder: #3D3D3D;
-  --title: #202024;
-  --tag: : #202024;
-  --footer: #323238;
+  --hue-dark: 240;
+  --hue-light: 0;
 
-  --header-background: #FFFFFF;
-  --main-background: #F5F5F5;
-  --footer-background: #FFFFFF;
-  --card-background: #FFFFFF;
-  --tag-background: #F5F5F5;
-  --search-bar-background: #EEEEEE;
+  --nav-item: hsl(var(--hue-dark), 6%, 58%);
+  --nav-item-selected: hsl(var(--hue-dark), 6%, 13%);
+  --search-bar-placeholder: hsl(var(--hue-light), 0%, 24%);
+  --title: hsl(var(--hue-dark), 6%, 13%);
+  --tag: hsl(var(--hue-dark), 6%, 13%);
+  --footer: hsl(var(--hue-dark), 7%, 21%);
+
+  --header-background: hsl(var(--hue-light), 0%, 100%);
+  --main-background: hsl(var(--hue-light), 0%, 96%);
+  --footer-background: hsl(var(--hue-light), 0%, 100%);
+  --card-background: hsl(var(--hue-light), 0%, 100%);
+  --tag-background: hsl(var(--hue-light), 0%, 96%);
+  --search-bar-background: hsl(var(--hue-light), 0%, 93%);
 }
 
 body {
@@ -225,6 +228,8 @@ footer p {
   border: 4px solid #20202493;
 }
 
+/* Animações */
+
 header {
   --startY: -100%;
   animation: move .3s;
@@ -235,7 +240,6 @@ footer {
   animation: move .3s;
 }
 
-/* Animações */
 @keyframes move {
   from {
     transform: translateY(var(--startY));
