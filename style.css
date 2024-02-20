@@ -132,16 +132,12 @@ main h1 {
 #gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 22rem;
-  column-gap: 20rem;
-
-  max-width: fit-content;
+  gap: 22rem;
 }
 
 #gallery figure {
   border-radius: 8rem;
 
-  max-width: 390rem;
   overflow: hidden;
 
   background-color: var(--card-background);
