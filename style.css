@@ -56,7 +56,7 @@ header,
 header nav {
   display: flex;
   align-items: center;
-  gap: 74rem;
+  gap: clamp(40rem, 40rem + 2vw, 74rem);
 }
 
 header nav a {
@@ -103,6 +103,10 @@ header form .input-wrapper input {
 header form .input-wrapper input::placeholder {
   opacity: 0.56;
   color: var(--search-bar-placeholder);
+}
+
+header form .input-wrapper .min-bar {
+  display: none;
 }
 
 header #user-icon {
@@ -287,5 +291,47 @@ figure {
 
   50% {
     transform: scale(1.05);
+  }
+}
+
+/* Media Queries */
+
+@media (max-width: 1180px) {
+  #gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32rem;
+  }
+}
+
+@media (max-width: 770px) {
+  header form .input-wrapper .max-bar {
+    display: none;
+  }
+
+  header form .input-wrapper .min-bar {
+    display: inline;
+  }
+
+  header form .input-wrapper div input {
+    padding: 16rem 16rem 16rem 42rem;
+  }
+}
+
+@media (max-width: 620px) {
+  #gallery {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32rem;
+  }
+}
+
+@media (max-width: 568px) {
+
+  header,
+  header nav {
+    gap: 28rem;
+  }
+
+  header nav {
+    display: none;
   }
 }
